@@ -1,8 +1,10 @@
-package com.example.vinsolmeetingscheduler;
+package com.example.vinsolmeetingscheduler.view.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.vinsolmeetingscheduler.R;
 
 public class MainActivity extends AppCompatActivity {
 
