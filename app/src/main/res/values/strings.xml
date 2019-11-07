@@ -5,4 +5,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="prev">PREV</string>
     <string name="next">NEXT</string>
+    <string name="title_activity_schedule_meeting_form">ScheduleMeetingFormActivity</string>
 </resources>
