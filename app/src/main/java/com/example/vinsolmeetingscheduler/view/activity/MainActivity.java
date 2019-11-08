@@ -133,13 +133,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 decrementDate = Constant.decrementAdataByOneDay(Constant.convertStringToDate(Constant.getDate(this)));
                 Constant.saveDate(this, Constant.convertDateToString(decrementDate));
                 observeViewModel(scheduleMeetingViewModel, Constant.getDate(this));
-
+                title_text.setText(Constant.convertDateToString(decrementDate));
                 break;
             case R.id.forward_click:
                 progressBar.setVisibility(View.VISIBLE);
                 incrementDate = Constant.incerementAdateByOneDay(Constant.convertStringToDate(Constant.getDate(this)));
                 Constant.saveDate(this, Constant.convertDateToString(incrementDate));
                 observeViewModel(scheduleMeetingViewModel, Constant.getDate(this));
+                title_text.setText(Constant.convertDateToString(incrementDate));
                 break;
             case R.id.schedule_meeting_button:
                 Intent intent = new Intent(this, ScheduleMeetingFormActivity.class);

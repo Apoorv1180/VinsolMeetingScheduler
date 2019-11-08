@@ -22,6 +22,7 @@ import com.example.vinsolmeetingscheduler.R;
 import com.example.vinsolmeetingscheduler.service.model.ScheduleMeetingResponse;
 import com.example.vinsolmeetingscheduler.util.Constant;
 import com.example.vinsolmeetingscheduler.viewmodel.ScheduleMeetingViewModel;
+import com.google.android.material.snackbar.Snackbar;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -129,10 +130,9 @@ public class ScheduleMeetingFormActivity extends AppCompatActivity implements Vi
         } else {
             meetingDescription.setError(null);
             if (checkMeetingLogic(currentTime.getTimeInMillis(), currentTimeEnd.getTimeInMillis(), startTimeinMilliseconds, endTimeinMilliseconds)) {
-                Toast.makeText(this, getString(R.string.slots_available), Toast.LENGTH_SHORT).show();
+               Snackbar.make(previous_button_click, getString(R.string.slots_available), Snackbar.LENGTH_LONG).show();
             } else
-                Toast.makeText(this, getString(R.string.slots_unavailable), Toast.LENGTH_SHORT).show();
-
+                Snackbar.make(previous_button_click, getString(R.string.slots_unavailable), Snackbar.LENGTH_LONG).show();
         }
     }
 
@@ -236,7 +236,7 @@ public class ScheduleMeetingFormActivity extends AppCompatActivity implements Vi
         scheduleMeetingViewModel.getMeetingResponse(date).observe(this, new Observer<List<ScheduleMeetingResponse>>() {
             @Override
             public void onChanged(List<ScheduleMeetingResponse> scheduleMeetingResponses) {
-                if (scheduleMeetingResponses != null) {
+                if (scheduleMeetingResponses != null && scheduleMeetingResponses.size() != 0) {
                     for (int i = 0; i < scheduleMeetingResponses.size(); i++) {
                         startTimeinMilliseconds.add(Constant.getTimeInMilliseconds(pickedDate, scheduleMeetingResponses.get(i).getStartTime()));
                         endTimeinMilliseconds.add(Constant.getTimeInMilliseconds(pickedDate, scheduleMeetingResponses.get(i).getEndTime()));
@@ -244,6 +244,7 @@ public class ScheduleMeetingFormActivity extends AppCompatActivity implements Vi
                     }
                 } else {
                     selectMeetingDate.setError(getResources().getString(R.string.no_data));
+                    Snackbar.make(previous_button_click, getString(R.string.no_data), Snackbar.LENGTH_LONG).show();
                 }
             }
         });
