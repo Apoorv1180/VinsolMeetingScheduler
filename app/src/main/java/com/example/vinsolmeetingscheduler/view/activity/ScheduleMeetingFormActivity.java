@@ -129,7 +129,17 @@ public class ScheduleMeetingFormActivity extends AppCompatActivity implements Vi
             meetingDescription.setError(getResources().getString(R.string.enter_valid_date));
         } else {
             meetingDescription.setError(null);
-            if (checkMeetingLogic(currentTime.getTimeInMillis(), currentTimeEnd.getTimeInMillis(), startTimeinMilliseconds, endTimeinMilliseconds)) {
+
+            if (currentTimeEnd.getTimeInMillis() <= currentTime.getTimeInMillis()) {
+                selectEndTime.setError(getResources().getString(R.string.select_valid_time));
+                selectStartTime.setError(getResources().getString(R.string.select_valid_time));
+
+            } else {
+                selectEndTime.setHint(getString(R.string.select_Valid_date));
+                selectStartTime.setHint(getString(R.string.select_Valid_date));
+                selectEndTime.setError(null);
+                selectStartTime.setError(null);
+            }            if (checkMeetingLogic(currentTime.getTimeInMillis(), currentTimeEnd.getTimeInMillis(), startTimeinMilliseconds, endTimeinMilliseconds)) {
                Snackbar.make(previous_button_click, getString(R.string.slots_available), Snackbar.LENGTH_LONG).show();
             } else
                 Snackbar.make(previous_button_click, getString(R.string.slots_unavailable), Snackbar.LENGTH_LONG).show();
