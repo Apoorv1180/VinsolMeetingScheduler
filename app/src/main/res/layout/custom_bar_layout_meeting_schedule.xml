@@ -9,6 +9,7 @@
         <LinearLayout
             android:id="@+id/back_click"
             android:layout_width="wrap_content"
+            android:layout_gravity="start"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
@@ -31,7 +32,7 @@
                 android:gravity="start"
                 android:padding="5dp"
                 android:text="BACK"
-                android:textSize="13sp"
+                android:textSize="@dimen/dimen15sp"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -41,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_weight="1"
-            android:textSize="13sp"
+            android:textSize="@dimen/dimen15sp"
             android:gravity="center_horizontal"
             android:padding="5dp"
             android:text="SCHEDULE A MEETING"

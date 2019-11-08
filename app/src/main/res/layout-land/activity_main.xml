@@ -29,7 +29,7 @@
         android:visibility="gone" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/schedule_list_recycler_view"
+        android:id="@+id/schedule_list_recycler_view_landscape"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dimen5dp"></androidx.recyclerview.widget.RecyclerView>
@@ -39,7 +39,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:textColor="@android:color/white"
         android:background="@color/colorPrimary"
         android:text="@string/schedule_meeting" />
 </RelativeLayout>

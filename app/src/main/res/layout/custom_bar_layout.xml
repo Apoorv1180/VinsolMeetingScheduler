@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal">
 
+
     <TableRow>
 
         <LinearLayout
@@ -31,17 +32,18 @@
                 android:gravity="start"
                 android:padding="5dp"
                 android:text="@string/prev"
-                android:textSize="14sp"
+                android:textSize="@dimen/dimen15sp"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textStyle="bold" />
         </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
+            android:id="@+id/title_text"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_weight="1"
-            android:textSize="14sp"
+            android:textSize="@dimen/dimen15sp"
             android:gravity="center_horizontal"
             android:padding="5dp"
             android:text="@string/app_name"
@@ -62,7 +64,7 @@
                 android:gravity="end"
                 android:padding="5dp"
                 android:text="@string/next"
-                android:textSize="14sp"
+                android:textSize="@dimen/dimen15sp"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textStyle="bold" />
 

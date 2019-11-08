@@ -6,4 +6,19 @@
     <string name="prev">PREV</string>
     <string name="next">NEXT</string>
     <string name="title_activity_schedule_meeting_form">ScheduleMeetingFormActivity</string>
+    <string name="no_data_for_current_date">No Data For Current Date</string>
+    <string name="schedule_meeting">SCHEDULE MEETING</string>
+    <string name="meeting_date">Meeting Date</string>
+    <string name="start_time">Start Time</string>
+    <string name="end_time">End Time</string>
+    <string name="meeting_description">Meeting Description</string>
+    <string name="submit">SUBMIT</string>
+    <string name="date_intent_extra">date</string>
+    <string name="enter_valid_date">Enter Valid Description</string>
+    <string name="slots_available">Slots Available</string>
+    <string name="slots_unavailable">Slots Not Available</string>
+    <string name="select_valid_time">Select Valid Time</string>
+    <string name="select_valid_date">Select Valid Date</string>
+    <string name="no_data">No data Present For the Date</string>
+    <string name="select_time">Select Time</string>
 </resources>
