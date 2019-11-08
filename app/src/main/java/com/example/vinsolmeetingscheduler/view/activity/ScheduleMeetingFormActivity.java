@@ -133,10 +133,12 @@ public class ScheduleMeetingFormActivity extends AppCompatActivity implements Vi
             if (currentTimeEnd.getTimeInMillis() <= currentTime.getTimeInMillis()) {
                 selectEndTime.setError(getResources().getString(R.string.select_valid_time));
                 selectStartTime.setError(getResources().getString(R.string.select_valid_time));
+                selectEndTime.setText(getString(R.string.select_Valid_date));
+                selectStartTime.setText(getString(R.string.select_Valid_date));
 
             } else {
-                selectEndTime.setHint(getString(R.string.select_Valid_date));
-                selectStartTime.setHint(getString(R.string.select_Valid_date));
+                selectEndTime.setText(getString(R.string.select_Valid_date));
+                selectStartTime.setText(getString(R.string.select_Valid_date));
                 selectEndTime.setError(null);
                 selectStartTime.setError(null);
             }            if (checkMeetingLogic(currentTime.getTimeInMillis(), currentTimeEnd.getTimeInMillis(), startTimeinMilliseconds, endTimeinMilliseconds)) {
@@ -153,6 +155,7 @@ public class ScheduleMeetingFormActivity extends AppCompatActivity implements Vi
             public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
                 currentTimeEnd.set(year, month, day, selectedHour, selectedMinute);
                 if (currentTimeEnd.getTimeInMillis() <= currentTime.getTimeInMillis()) {
+                    selectEndTime.setText(getString(R.string.select_Valid_date));
                     selectEndTime.setError(getResources().getString(R.string.select_valid_time));
                 } else {
                     selectEndTime.setText(selectedHour + ":" + selectedMinute);
