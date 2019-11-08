@@ -14,6 +14,8 @@ import com.example.vinsolmeetingscheduler.util.Constant;
 
 import java.util.List;
 
+import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -28,9 +30,14 @@ public class DataRepository {
 
 
     private DataRepository(Application application) {
+        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+        interceptor.level(HttpLoggingInterceptor.Level.BODY);
+        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(Constant.getBaseUrl())
                 .addConverterFactory(GsonConverterFactory.create())
+                .client(client)
                 .build();
         apiService = retrofit.create(ApiService.class);
 

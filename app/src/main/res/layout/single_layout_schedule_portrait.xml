@@ -19,8 +19,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:background="@drawable/back"
-       />
+        android:background="@color/colorPrimary"/>
 
     <TextView
         android:id="@+id/meeting_description"

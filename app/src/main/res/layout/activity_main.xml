@@ -7,8 +7,20 @@
     android:orientation="vertical"
     tools:context=".view.activity.MainActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_margin="10dp"
+        android:id="@+id/emptyView"
+        android:gravity="center"
+        android:visibility="gone"
+        android:text="No Data For Current Date"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/schedule_list_recycler_view"
+        android:layout_margin="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     </androidx.recyclerview.widget.RecyclerView>
@@ -17,6 +29,7 @@
         android:id="@+id/schedule_meeting_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
         android:text="SCHEDULE MEETING"
         android:layout_alignParentBottom="true"
         />
