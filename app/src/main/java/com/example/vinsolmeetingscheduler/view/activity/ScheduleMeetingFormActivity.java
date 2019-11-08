@@ -178,8 +178,10 @@ public class ScheduleMeetingFormActivity extends AppCompatActivity implements Vi
 
                 if (pickedDate.getTimeInMillis() >= currentDate.getTimeInMillis()) {
                     submit.setEnabled(true);
+                    selectMeetingDate.setText(Constant.convertDateToString(pickedDate.getTime()));
                     observeViewModel(scheduleMeetingViewModel, Constant.convertDateToString(pickedDate.getTime()));
                 } else {
+                    selectMeetingDate.setText(getResources().getString(R.string.select_valid_date));
                     selectMeetingDate.setError(getResources().getString(R.string.select_valid_date));
                 }
             }
@@ -195,7 +197,6 @@ public class ScheduleMeetingFormActivity extends AppCompatActivity implements Vi
         pickedDate.set(Calendar.MINUTE, 0);
         pickedDate.set(Calendar.SECOND, 0);
         pickedDate.set(Calendar.MILLISECOND, 0);
-        selectMeetingDate.setText(Constant.convertDateToString(pickedDate.getTime()));
         Date dateFr = Constant.convertStringToDate(date);
         Calendar currentDate = Calendar.getInstance();
         currentDate.setTime(dateFr);
