@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".view.activity.ScheduleMeetingFormActivity"></activity>
+        <activity android:name=".view.activity.ScheduleMeetingFormActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize"></activity>
         <activity android:name=".view.activity.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
